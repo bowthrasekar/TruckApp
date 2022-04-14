@@ -14,7 +14,8 @@ function App() {
       <Route path="Login" element={<Login />} />
        <Route path="Dashboard" element={<Dashboard />} /> 
        <Route path="Checkfare" element={<Checkfare />} /> 
-       <Route path="invoice" element={ <Invoice />} /> 
+       <Route path="invoice" element={ <Invoice />} />
+        
     </Routes>
   </BrowserRouter>
   ) 
