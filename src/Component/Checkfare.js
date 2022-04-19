@@ -10,7 +10,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Checkfare() {
     const navigate = useNavigate();
-    const [goods, setGoods] = useState('')
+    const [goods, setGoods] = useState('');
+    const[weight, setWeight]=useState('')
     const [startDate, setStartDate] = useState(new Date());
    
     useEffect(() => {
@@ -18,15 +19,23 @@ function Checkfare() {
         if (data) {
             let val = JSON.parse(data)
             setGoods(val.typesofGoods)
-
+            setWeight(val.weighht)
+            setStartDate(new Date(val.date))
         }
     }, [])
+ 
+    
+    
     function handleNext() {
         if (goods) {
             let data = {
                 typesofGoods: goods,
+                weight:weight,
+                date:startDate
+
             }
             localStorage.setItem("goodstype", JSON.stringify(data))
+         
             navigate('/Invoice')
 
         }
@@ -37,6 +46,7 @@ function Checkfare() {
 
     return (
         <div style={{ margin: '7%' }}>
+            <label>CHOOSE SERVICE TYPE</label>
             <Box
                 component="form"
                 sx={{
@@ -44,7 +54,9 @@ function Checkfare() {
                 }}
                 noValidate
                 autoComplete="off">
-                <TextField id="outlined-basic" label="weight of goods" variant="outlined" />
+                    
+                <TextField id="outlined-basic" label="weight of goods" variant="outlined" 
+                onChange={(e)=>setWeight(e.target.value)} />
             </Box>
             <Autocomplete
                 options={goodsType}
@@ -59,12 +71,14 @@ function Checkfare() {
 
             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
             <div style={{ margin: '7%' }}>
-                <Button variant="contained" size="large" onClick={handleNext}>
-                    NEXT
-                </Button>
-                <Button variant="contained" size="large" onClick={() => navigate('/Dashboard')}>
+            <Button variant="contained" size="large" onClick={() => navigate('/Dashboard')}>
                     BACK
                 </Button>
+                <Button style={{ marginLeft:'50%'}}variant="contained" size="large" onClick={handleNext}>
+                    NEXT
+                </Button>
+               
+                
             </div>
         </div>
     )
