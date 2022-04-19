@@ -7,9 +7,11 @@ import TextField from '@mui/material/TextField';
 import { useNavigate } from "react-router-dom";
 import { goodsType } from '../Utils/DataUtils'
 import "react-datepicker/dist/react-datepicker.css";
+import Header from "./Header";
 
 function Checkfare() {
     const navigate = useNavigate();
+    const username = localStorage.getItem('username');
     const [goods, setGoods] = useState('');
     const[weight, setWeight]=useState('')
     const [startDate, setStartDate] = useState(new Date());
@@ -45,7 +47,9 @@ function Checkfare() {
     }
 
     return (
-        <div style={{ margin: '7%' }}>
+        <div>
+            <Header username={username}/>
+            <div style={{margin: "7%"}}>
             <label>CHOOSE SERVICE TYPE</label>
             <Box
                 component="form"
@@ -69,7 +73,7 @@ function Checkfare() {
 
             />
 
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+            <div style={{margin: "2%"}}><DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /></div>
             <div style={{ margin: '7%' }}>
             <Button variant="contained" size="large" onClick={() => navigate('/Dashboard')}>
                     BACK
@@ -79,6 +83,7 @@ function Checkfare() {
                 </Button>
                
                 
+            </div>
             </div>
         </div>
     )

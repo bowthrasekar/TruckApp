@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Header from "./Header";
 
 
 
@@ -14,7 +15,7 @@ function Invoice() {
     const orders = JSON.parse(localStorage.getItem("orderDetails"));
     const orderstype= JSON.parse(localStorage.getItem("goodstype"));
    
-        return (
+        return (<div><Header />
         <div style={{margin: '1%'}}>
             <div style={{ border: '3px solid black' }}>
             <TableContainer component={Paper}>
@@ -67,6 +68,7 @@ function Invoice() {
 
 
             </div>
+        </div>
         </div>
     )
 

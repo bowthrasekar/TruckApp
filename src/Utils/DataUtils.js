@@ -1,11 +1,11 @@
 export const loginList = [
     {
-      username: "bowthra",
+      username: "Bowthra",
       password: "123",
       email: "bow@gmail.com"
     },
     {
-      username: "sindhu",
+      username: "Sindhu",
       password: "456",
       email: "sindhu@gmail.com"
     },
