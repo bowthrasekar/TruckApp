@@ -6,6 +6,7 @@ import Dashboard from "./Component/Dashboard";
 import Login from "./Component/Login";
 import Checkfare from "./Component/Checkfare";
 import Invoice from "./Component/Invoice";
+import Register from "./Component/Register"
 function App() { 
   return(
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
        <Route path="Dashboard" element={<Dashboard />} /> 
        <Route path="Checkfare" element={<Checkfare />} /> 
        <Route path="invoice" element={ <Invoice />} />
+       <Route path="Register"element={<Register/>}/>
         
     </Routes>
   </BrowserRouter>
