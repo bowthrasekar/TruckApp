@@ -11,66 +11,79 @@ import Header from "./Header";
 
 
 function Invoice() {
-  
-    const orders = JSON.parse(localStorage.getItem("orderDetails"));
-    const orderstype= JSON.parse(localStorage.getItem("goodstype"));
-   
-        return (<div><Header />
-        <div style={{margin: '1%'}}>
-            <div style={{ border: '3px solid black' }}>
-            <TableContainer component={Paper}>
-       <Table sx={{ minWidth: 700 }} aria-label="spanning table">
-        <TableHead>
-            <TableRow>
-        <TableCell align="center" colSpan={5}>
-              Details
-            </TableCell>
-            </TableRow>
-          <TableRow>
-              
-            <TableCell align="center">PICKUP LOCATION</TableCell>
-            <TableCell align="center">DROPLOCATION</TableCell>
-            <TableCell align="center">TRUCK TYPE</TableCell>
-            <TableCell align="center">GOODS TYPE</TableCell>
-            <TableCell align="center">WEIGHT</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-        <TableRow >                                       
-        <TableCell align="center">{orders.pickupLocation}</TableCell>
-        <TableCell align="center">{orders.dropLocation}</TableCell>
-        <TableCell align="center">{orders.truckType}</TableCell>
-        <TableCell align="center">{orderstype.typesofGoods}</TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell rowSpan={3} />
-            <TableCell colSpan={3}>FARE</TableCell>
-            <TableCell align="right">12</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Tax</TableCell>
-            
-            <TableCell colSpan={3} align="right">13</TableCell>
-          </TableRow>
-          <TableRow>
-          <TableCell colSpan={2}>GST</TableCell>
-          </TableRow>
-                    <TableRow>
-            <TableCell colSpan={4}>TOTAL FARE</TableCell>
-            <TableCell align="right">26</TableCell>
-          </TableRow>
-        </TableBody>
-        </Table>
+
+  const orders = JSON.parse(localStorage.getItem("orderDetails"));
+  const orderstype = JSON.parse(localStorage.getItem("goodstype"));
+
+  return (<div><Header />
+    <div style={{ margin: '5% 30%' }}>
+      <div style={{ border: '3px solid black' }}>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 200 }} aria-label="spanning table">
+            <TableHead>
+              <TableRow>
+                <TableCell colSpan={2}>
+                  <img style={{ height: '68px' }} src={"/images/logo.jpg"} />
+                  <img style={{ height: "68px", width: "200px" }} src={"/images/name.jpg"} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="right">INVOICE NUMBER</TableCell>
+                <TableCell align="left" style={{ fontWeight: "bold" }}>2246321321310</TableCell>
+
+              </TableRow>
+            </TableHead>
+
+
+            <TableBody>
+              <TableRow>
+                <TableCell align="right">PICKUP LOCATION</TableCell>
+                <TableCell align="left">{orders.pickupLocation}</TableCell>
+              </TableRow>
+              <TableRow >
+                <TableCell align="right">DROPLOCATION</TableCell>
+                <TableCell align="left">{orders.dropLocation}</TableCell>
+              </TableRow>
+              <TableRow >
+                <TableCell align="right">TRUCK TYPE</TableCell>
+                <TableCell align="left">{orders.truckType.label}</TableCell>
+              </TableRow>
+              <TableRow >
+                <TableCell align="right">GOODS TYPE</TableCell>
+                <TableCell align="left">{orderstype.typesofGoods}</TableCell>
+              </TableRow>
+              <TableRow >
+                <TableCell align="right">WEIGHT</TableCell>
+                <TableCell align="left">50 Tons</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>FARE</TableCell>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>Rs. 1200</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>Tax</TableCell>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>Rs. 130</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>GST</TableCell>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>Rs. 50</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="right" style={{ fontWeight: "bold", color: 'green' }}>TOTAL FARE</TableCell>
+                <TableCell align="right" style={{ fontWeight: "bold", color: 'green' }}>Rs. 1380</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </TableContainer>
-        
-
-        
 
 
-            </div>
-        </div>
-        </div>
-    )
+
+
+
+      </div>
+    </div>
+  </div>
+  )
 
 }
 export default Invoice;
