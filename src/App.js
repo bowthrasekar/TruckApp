@@ -8,7 +8,12 @@ import Dashboard from "./Component/Dashboard";
 import Login from "./Component/Login";
 import Checkfare from "./Component/Checkfare";
 import Invoice from "./Component/Invoice";
-import Register from "./Component/Register"
+import Register from "./Component/Register";
+import Profile from "./Component/Profile";
+import Orders from "./Component/Orders";
+import OrdersDetails from "./Component/OrderDetails";
+import TrackOrders from "./Component/TrackOrders";
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +24,10 @@ function App() {
         <Route path="Checkfare" element={<Checkfare />} />
         <Route path="Invoice" element={<Invoice />} />
         <Route path="Register" element={<Register />} />
-
+        <Route path="Profile" element={<Profile />} />
+        <Route path="Orders" element={<Orders />} />
+        <Route path="OrdersDetails" element={<OrdersDetails />} />
+        <Route path="TrackOrders" element={<TrackOrders />} />
       </Routes>
     </BrowserRouter>
   )

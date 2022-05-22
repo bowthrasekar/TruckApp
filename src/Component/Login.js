@@ -96,10 +96,11 @@ function Login() {
             navigate('/Dashboard')
         }
         else {
-            alert("invalid")
+            alert("Invalid Username or Password!..")
         }
     }
     function handleRegister() {
+        alert("Kindly fill all required Fields.")
         console.log(registerData)
     }
 
@@ -168,7 +169,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "8%", marginLeft: "22%" }} id="outlined-basic" label="USER NAME" variant="outlined"
+                        <TextField style={{ marginTop: "8%", marginLeft: "22%" }} id="outlined-basic" label="USER NAME*" variant="outlined"
                             value={registerData.username} name="regusername" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Box
@@ -179,7 +180,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="EMAIL" variant="outlined"
+                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="EMAIL*" variant="outlined"
                             value={registerData.email} name="regemail" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Box
@@ -190,7 +191,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="MOBILE NUMBER" variant="outlined"
+                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="MOBILE NUMBER*" variant="outlined"
                             value={registerData.mobile} name="regmobile" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Box
@@ -201,7 +202,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="PASSOWRD" variant="outlined"
+                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="PASSOWRD*" variant="outlined"
                             value={registerData.password} name="regpassword" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Box
@@ -212,7 +213,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="CONFIRM PASSOWRD" variant="outlined"
+                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="CONFIRM PASSOWRD*" variant="outlined"
                             value={confirmPassword} name="confirmpassword" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Button style={{ marginLeft: '35%', marginTop: "10%" }} variant="contained" size="large" onClick={handleRegister}>
