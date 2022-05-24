@@ -13,6 +13,8 @@ import Profile from "./Component/Profile";
 import Orders from "./Component/Orders";
 import OrdersDetails from "./Component/OrderDetails";
 import TrackOrders from "./Component/TrackOrders";
+import About from "./Component/About";
+import ContactUs from "./Component/ContactUs";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="Orders" element={<Orders />} />
         <Route path="OrdersDetails" element={<OrdersDetails />} />
         <Route path="TrackOrders" element={<TrackOrders />} />
+        <Route path="About" element={<About />} />
+        <Route path="ContactUs" element={<ContactUs />} />
       </Routes>
     </BrowserRouter>
   )

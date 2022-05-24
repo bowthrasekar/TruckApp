@@ -25,7 +25,9 @@ function Header(props) {
     const url = {
         "Profile": "/Profile",
         "Orders": "/Orders",
-        "Logout": "/"
+        "Logout": "/",
+        "ABOUT US": "/About",
+        "CONTACT US": "/ContactUs"
     }
 
     const handleOpenNavMenu = (event) => {
@@ -105,7 +107,7 @@ function Header(props) {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={(e) => handleMenu(e, page)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
