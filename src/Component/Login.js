@@ -64,22 +64,22 @@ function Login() {
             setPassword(e.target.value)
         }
         else if (e.target.name == "regusername") {
-            let data = registerData;
+            let data = JSON.parse(JSON.stringify(registerData));
             data["username"] = e.target.value;
             setRegisterData(data)
         }
         else if (e.target.name == "regemail") {
-            let data = registerData;
+            let data = JSON.parse(JSON.stringify(registerData));
             data["email"] = e.target.value;
             setRegisterData(data)
         }
         else if (e.target.name == "regmobile") {
-            let data = registerData;
+            let data = JSON.parse(JSON.stringify(registerData));
             data["mobile"] = e.target.value;
             setRegisterData(data)
         }
         else if (e.target.name == "regpassword") {
-            let data = registerData;
+            let data = JSON.parse(JSON.stringify(registerData));
             data["password"] = e.target.value;
             setRegisterData(data)
         }
@@ -100,7 +100,8 @@ function Login() {
         }
     }
     function handleRegister() {
-        alert("Kindly fill all required Fields.")
+        alert("Registration Success!!!!... Please login.")
+        setOpen(false);
         console.log(registerData)
     }
 
@@ -202,7 +203,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="PASSOWRD*" variant="outlined"
+                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" type="password" label="PASSOWRD*" variant="outlined"
                             value={registerData.password} name="regpassword" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Box
@@ -213,7 +214,7 @@ function Login() {
                         noValidate
                         autoComplete="off">
 
-                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" label="CONFIRM PASSOWRD*" variant="outlined"
+                        <TextField style={{ marginTop: "1%", marginLeft: "22%" }} id="outlined-basic" type="password" label="CONFIRM PASSOWRD*" variant="outlined"
                             value={confirmPassword} name="confirmpassword" onChange={(e) => handleChange(e)} />
                     </Box>
                     <Button style={{ marginLeft: '35%', marginTop: "10%" }} variant="contained" size="large" onClick={handleRegister}>
