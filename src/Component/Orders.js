@@ -71,7 +71,7 @@ function Orders() {
         toLocation: "Tirupur",
     }]
     const handleView = (e) => {
-
+        navigate("/TrackOrders")
     }
     const handlemenu = (e) => {
         let data = { "history": false, "pending": false, "cancelled": false }

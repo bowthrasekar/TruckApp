@@ -24,6 +24,7 @@ function Header(props) {
     const settings = ['Profile', 'Orders', 'Logout'];
     const url = {
         "Profile": "/Profile",
+        "ORDERS": "/Orders",
         "Orders": "/Orders",
         "Logout": "/",
         "ABOUT US": "/About",
